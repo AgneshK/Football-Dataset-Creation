@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..700&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---- design tokens: near-monochrome zinc + semantic accents ---- */
+:root {
+  --radius: 0.625rem;
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.141 0.005 285.823);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.141 0.005 285.823);
+  --primary: oklch(0.21 0.006 285.885);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: oklch(0.705 0.015 286.067);
+
+  /* semantic — only used for value verdicts / similarity */
+  --positive: oklch(0.596 0.145 163.225);
+  --negative: oklch(0.577 0.245 27.325);
+
+  /* categorical palette for multi-series charts (radar overlays) */
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.577 0.245 27.325);
+}
+
+.dark {
+  --background: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.18 0.006 285.885);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.18 0.006 285.885);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.21 0.006 285.885);
+  --secondary: oklch(0.274 0.006 286.033);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.274 0.006 286.033);
+  --muted-foreground: oklch(0.705 0.015 286.067);
+  --accent: oklch(0.274 0.006 286.033);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 9%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.552 0.016 285.938);
+
+  --positive: oklch(0.765 0.177 163.223);
+  --negative: oklch(0.704 0.191 22.216);
+
+  --chart-1: oklch(0.7 0.18 47);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.65 0.2 16);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-positive: var(--positive);
+  --color-negative: var(--negative);
+
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    @apply bg-foreground/90 text-background;
+  }
+  /* tabular figures everywhere we show numbers */
+  .font-mono {
+    font-feature-settings: "tnum" 1, "cv01" 1;
+  }
+}
+
+/* markdown rendering for the agent's intel briefs */
+.md {
+  @apply text-sm leading-relaxed;
+}
+.md h2,
+.md h3 {
+  @apply mt-4 mb-1 text-sm font-semibold tracking-tight;
+}
+.md h2:first-child,
+.md h3:first-child {
+  @apply mt-0;
+}
+.md p {
+  @apply my-1.5 text-foreground/90;
+}
+.md ul {
+  @apply my-1.5 list-disc space-y-1 pl-5;
+}
+.md ol {
+  @apply my-1.5 list-decimal space-y-1 pl-5;
+}
+.md li {
+  @apply text-foreground/90;
+}
+.md li::marker {
+  color: var(--muted-foreground);
+}
+.md a {
+  @apply underline underline-offset-2;
+}
+.md strong {
+  @apply font-semibold text-foreground;
+}
+.md code {
+  @apply rounded bg-muted px-1 py-0.5 font-mono text-xs;
+}
+
+/* subtle dotted grid backdrop for the hero */
+.bg-grid {
+  background-image: radial-gradient(
+    color-mix(in oklch, var(--foreground) 9%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 0%, black 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 60% 60% at 50% 0%, black 30%, transparent 75%);
+}

@@ -1,0 +1,24 @@
+# Core data + ML
+pandas
+numpy
+scikit-learn
+Unidecode
+rapidfuzz          # fuzzy name matching for the Transfermarkt join
+
+# API
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv      # load secrets (GROQ_API_KEY) from .env
+
+# Value model
+torch              # deep-learning value predictor (MLP)
+lightgbm           # gradient-boosted baseline
+optuna             # hyperparameter search for the MLP
+joblib             # model/scaler persistence
+
+# Agent (LLM)
+langgraph
+langchain-core
+langchain-groq
+google-genai       # Gemini 2.5 Pro + Google Search grounding for player intel

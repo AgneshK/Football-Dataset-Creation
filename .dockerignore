@@ -1,0 +1,18 @@
+# Keep the build context (and image) small — the backend only needs src/, data/processed/,
+# models/ and requirements.txt. Everything below is irrelevant to the API at runtime.
+frontend/
+notebooks/
+docs/
+specs/
+.specify/
+.claude/
+data/raw/
+.git/
+.gitignore
+.env
+.env.example
+__pycache__/
+**/__pycache__/
+*.pyc
+.venv/
+venv/

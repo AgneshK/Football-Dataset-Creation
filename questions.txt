@@ -1,0 +1,50 @@
+● Question types you can ask
+
+  Clones (similar players)
+  - Find a clone of Harry Kane in La Liga
+  - Who plays like Rodri
+  - Players similar to Lamine Yamal under 23
+
+  Budget clones
+  - A striker like Haaland under €40M
+  - Someone like Bruno Fernandes for less than 50 million
+
+  Archetype (playing style)
+  - What kind of player is Rodri
+  - What's Saliba's statistical style
+  - Describe Pedri's archetype
+
+  Value (market estimate)
+  - Show me undervalued midfielders
+  - Is Gvardiol overvalued
+  - Most underpriced forwards in Serie A
+
+  Intel (live news/injury/rumours)
+  - Any injury news on Saka
+  - What's the latest on Mbappé
+  - Is Rodri suspended
+
+  Counter (stop an attacker)
+  - Find me a defender that can stop Haaland
+  - Best centre-back to nullify Kane
+  - Who can mark Vinícius in La Liga
+
+  Discover — traits (per-90 style)
+  - A ball-carrying midfielder with progressive passes
+  - Clinical poachers under 23
+  - Aerially dominant centre-backs in Serie A
+
+  Discover — leaderboards (season totals)
+  - Who has the most assists in the Premier League
+  - Top scorers in Serie A this season
+  - Most progressive passes overall
+
+  Compare (head-to-head)
+  - Compare Rodri and Bellingham
+  - Is Saliba better than Gvardiol aerially
+  - Mbappé vs Vinícius
+
+  General (tactics / rules / trivia)
+  - What formation suits a high-pressing team
+  - Who won the 2022 World Cup
+  - Explain the false nine role

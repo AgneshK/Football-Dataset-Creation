@@ -6,7 +6,16 @@ through a FastAPI backend, a PyTorch/LightGBM value model, and a LangGraph + Gro
 behind a React UI.
 
 <p align="center">
-  <b><a href="https://YOUR-PROJECT.pages.dev">🔗 Live App</a></b> ·
+  <img src="https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI">
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch">
+  <img src="https://img.shields.io/badge/React_19-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite">
+  <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" alt="LangChain">
+</p>
+
+<p align="center">
+  <b><a href="https://ai-football-scount.agnesh-kundu.workers.dev/">🔗 Live App</a></b> ·
   <b><a href="https://AgneshK10-football-scout-api.hf.space/docs">📘 API Docs</a></b> ·
   <b><a href="https://AgneshK10-football-scout-api.hf.space/">❤️ API Health</a></b>
 </p>
@@ -44,13 +53,40 @@ similarity**. Market value is treated strictly as a label — it never enters th
 
 ## Tech stack
 
-| Layer     | Tech |
-|-----------|------|
-| Frontend  | React 19, Vite, Tailwind v4, shadcn-style components |
-| Backend   | FastAPI, Uvicorn, Pydantic |
-| ML        | scikit-learn, PyTorch, LightGBM, Optuna |
-| Agent/LLM | LangGraph, Groq (parser + reports), Gemini 2.5 Pro (grounded intel) |
-| Hosting   | Cloudflare Pages (frontend) · Hugging Face Spaces / Docker (backend) |
+**Frontend**
+
+![React](https://img.shields.io/badge/React_19-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+
+**Backend**
+
+![Python](https://img.shields.io/badge/Python_3.12-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Uvicorn](https://img.shields.io/badge/Uvicorn-2A2A2A?style=flat-square&logo=gunicorn&logoColor=white)
+![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=flat-square&logo=pydantic&logoColor=white)
+
+**ML / Data**
+
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
+![LightGBM](https://img.shields.io/badge/LightGBM-2E8B57?style=flat-square&logo=tinkercad&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white)
+![Optuna](https://img.shields.io/badge/Optuna-3860DB?style=flat-square&logo=optuna&logoColor=white)
+
+**Agent / LLM**
+
+![LangChain](https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
+![Groq](https://img.shields.io/badge/Groq-F55036?style=flat-square&logo=groq&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini_2.5_Pro-8E75B2?style=flat-square&logo=googlegemini&logoColor=white)
+
+**Hosting**
+
+![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-F38020?style=flat-square&logo=cloudflarepages&logoColor=white)
+![Hugging Face](https://img.shields.io/badge/Hugging_Face_Spaces-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 
 ## API endpoints
 

@@ -73,25 +73,47 @@ Requires the project (at least `frontend/`) pushed to a GitHub repo.
    - Build command: `npm run build`
    - Build output directory: `dist`
 3. **Environment variables** (Production):
-   - `VITE_API_BASE` = `https://<your-username>-football-scout-api.hf.space`
+   - `VITE_API_BASE` = `https://AgneshK10-football-scout-api.hf.space`
      (bare origin, **no** trailing slash, **no** `/api` — the client appends paths like
      `/search` directly.)
-4. **Save and Deploy.** You get a `https://<project>.pages.dev` URL.
+   - `NODE_VERSION` = `22` (also pinned via `frontend/.nvmrc`).
+4. **Save and Deploy.** Live at <https://ai-football-scount.agnesh-kundu.workers.dev/>.
 
 > Changing `VITE_API_BASE` later requires a **redeploy** (Vite inlines env vars at build time).
+
+### ⚠️ Gotcha: `npm ci` fails on a Windows-generated lockfile
+
+A `package-lock.json` generated on **Windows** omits Linux-only optional deps (e.g.
+`@emnapi/*`), so Cloudflare's Linux `npm ci` fails with *"package.json and package-lock.json
+… not in sync / Missing: @emnapi/core"*. Fix: **don't commit the lockfile** — it's gitignored
+in `frontend/.gitignore`, so Cloudflare falls back to `npm install`, which resolves per-platform
+deps correctly. If a build still runs `npm clean-install`, you're looking at a **retry of an old
+commit** (which still had the lockfile) or a stale **build cache** — trigger a fresh deploy of the
+latest commit, or recreate the Pages project.
 
 ---
 
 ## 3. Keep the backend warm (no cold start)
 
-HF Spaces pause after ~48 h idle. A periodic ping resets that timer.
+HF Spaces pause after ~48 h idle. A periodic GET request resets that timer so the backend
+never cold-starts.
 
-1. https://cron-job.org → free account → **Create cronjob**.
-2. URL: `https://<your-username>-football-scout-api.hf.space/`
-3. Schedule: **every 6 hours** (well inside the 48 h window; bump to hourly if you want it
-   guaranteed-hot during active periods).
+1. Go to **https://cron-job.org** → create a free account.
+2. **Create cronjob:**
+   - **Title**: `football-scout keep-warm`
+   - **URL**: `https://AgneshK10-football-scout-api.hf.space/`
+   - **Schedule**: every **6 hours** (custom: minutes `0`, hours `*/6`). Well inside the 48 h
+     window; bump to hourly if you want it guaranteed-hot during the day.
+   - **Request method**: GET. Leave notifications on so you're emailed if the Space ever 5xxs.
+3. **Save** and ensure it's **enabled**.
 
-That's it — frontend is always-on (static), backend stays warm via the pinger.
+The `/` endpoint is the lightweight health check (`{"status":"ok", ...}`) — ideal to ping
+since it loads no LLM and returns instantly.
+
+> Alternatives: UptimeRobot (5-min minimum, also free) or a GitHub Actions scheduled workflow
+> (`on: schedule: - cron: "0 */6 * * *"` running `curl`). cron-job.org is the simplest.
+
+That's it — frontend is always-on (static edge), backend stays warm via the pinger. All free.
 
 ---
 

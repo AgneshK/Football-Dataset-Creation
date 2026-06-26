@@ -23,6 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-# Untracked: Windows-generated lock omits Linux optional deps and breaks CI 'npm ci'.
-# Cloudflare falls back to 'npm install' which resolves per-platform deps correctly.
+# Lockfile is intentionally untracked: a Windows-generated lock omits Linux-only
+# optional deps (e.g. @emnapi) and breaks `npm ci` on Cloudflare's Linux builders.
+# With no lockfile, Cloudflare uses `npm install`, which resolves per-platform deps.
 package-lock.json

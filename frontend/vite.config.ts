@@ -3,10 +3,12 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "node:path";
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 // In dev, calls to /api are proxied to the FastAPI backend on :8000.
 // In production, set VITE_API_BASE to the deployed API origin.
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [react(), tailwindcss(), cloudflare()],
   resolve: {
     alias: { "@": path.resolve(__dirname, "./src") },
   },

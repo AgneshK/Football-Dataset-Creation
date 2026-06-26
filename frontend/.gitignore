@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Untracked: Windows-generated lock omits Linux optional deps and breaks CI 'npm ci'.
+# Cloudflare falls back to 'npm install' which resolves per-platform deps correctly.
+package-lock.json

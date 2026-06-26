@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "ai-football-scount",
+  "name": "ai-football-scout",
   "compatibility_date": "2026-06-26",
   "observability": {
     "enabled": true

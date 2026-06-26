@@ -15,7 +15,7 @@ behind a React UI.
 </p>
 
 <p align="center">
-  <b><a href="https://ai-football-scount.agnesh-kundu.workers.dev/">🔗 Live App</a></b> ·
+  <b><a href="https://ai-football-scout.pitchiq.workers.dev/">🔗 Live App</a></b> ·
   <b><a href="https://AgneshK10-football-scout-api.hf.space/docs">📘 API Docs</a></b> ·
   <b><a href="https://AgneshK10-football-scout-api.hf.space/">❤️ API Health</a></b>
 </p>

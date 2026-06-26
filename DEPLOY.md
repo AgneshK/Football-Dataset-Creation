@@ -77,7 +77,7 @@ Requires the project (at least `frontend/`) pushed to a GitHub repo.
      (bare origin, **no** trailing slash, **no** `/api` — the client appends paths like
      `/search` directly.)
    - `NODE_VERSION` = `22` (also pinned via `frontend/.nvmrc`).
-4. **Save and Deploy.** Live at <https://ai-football-scount.agnesh-kundu.workers.dev/>.
+4. **Save and Deploy.** Live at <https://ai-football-scout.pitchiq.workers.dev/>.
 
 > Changing `VITE_API_BASE` later requires a **redeploy** (Vite inlines env vars at build time).
 
